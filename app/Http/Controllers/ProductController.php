@@ -11,12 +11,12 @@ use Illuminate\Support\Facades\Validator;
 
 class ProductController extends Controller
 {
-    private ProductRepositoryInterface $productRepository;
+    // private ProductRepositoryInterface $productRepository;
 
-    public function __construct(ProductRepositoryInterface $productRepository)
-    {
-        $this->productRepository = $productRepository;
-    }
+    // public function __construct(ProductRepositoryInterface $productRepository)
+    // {
+    //     $this->productRepository = $productRepository;
+    // }
     /**
      * Display a listing of the resource.
      *
@@ -28,7 +28,7 @@ class ProductController extends Controller
         return response()->json(
             [
                 'status' => 'success',
-                'products' => $this->productRepository->getAllProducts(),
+                'products' => Product::all(),
             ],
             200
         );

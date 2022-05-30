@@ -27,6 +27,6 @@ Route::post('/seller/login', [AuthController::class, 'loginSeller']);
 Route::get('/products', [ProductController::class, 'index']);
 
 //Seller
-Route::post('/product', [SellerController::class, 'storeProduct']);
-
+Route::post('/seller/{seller}/product', [SellerController::class, 'storeProduct']);
+Route::get('/seller/{seller}/product', [SellerController::class, 'show_products']);
 //Buyer

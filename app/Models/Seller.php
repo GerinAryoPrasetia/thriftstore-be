@@ -9,7 +9,7 @@ use Laravel\Sanctum\HasApiTokens;
 class Seller extends Model
 {
     use HasFactory, HasApiTokens;
-
+    protected $table = 'sellers';
     protected $fillable = [
         'name',
         'email',
@@ -17,4 +17,9 @@ class Seller extends Model
         'phone',
         'role'
     ];
+
+    public function products()
+    {
+        return $this->hasMany('App\Models\Product');
+    }
 }
