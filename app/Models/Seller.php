@@ -15,7 +15,7 @@ class Seller extends Model
         'email',
         'password',
         'phone',
-        'role'
+
     ];
 
     public function products()

@@ -24,7 +24,6 @@ class AuthController extends Controller
             'email' => $fields['email'],
             'password' => bcrypt($fields['password']),
             'phone' => $fields['phone'],
-            'role' => 'buyer'
         ]);
 
         $token = $user->createToken('token', ['user'])->plainTextToken;
@@ -76,7 +75,7 @@ class AuthController extends Controller
             'email' => 'required|unique:sellers,email',
             'password' => 'required',
             'phone' => 'required',
-            'role' => 'required',
+
         ]);
 
         $seller = Seller::create([
@@ -84,7 +83,7 @@ class AuthController extends Controller
             'email' => $fields['email'],
             'password' => bcrypt($fields['password']),
             'phone' => $fields['phone'],
-            'role' => 'seller',
+
         ]);
 
         //Create Token

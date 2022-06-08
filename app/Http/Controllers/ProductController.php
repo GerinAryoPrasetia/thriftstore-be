@@ -66,6 +66,10 @@ class ProductController extends Controller
         return $this->productRepository->searchProduct($product_name);
     }
 
+    public function show($id)
+    {
+        return Product::find($id);
+    }
     /**
      * Show the form for editing the specified resource.
      *
