@@ -31,7 +31,7 @@ class BuyerController extends Controller
 
     /**
      * Display the specified resource.
-     *
+     *1
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */

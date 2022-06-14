@@ -6,6 +6,7 @@ use App\Models\Product;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use App\Interfaces\ProductRepositoryInterface;
+use App\Models\Seller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -25,10 +26,11 @@ class ProductController extends Controller
     public function index()
     {
         //Show all product registered from database
+        $products = Product::with('seller')->get();
         return response()->json(
             [
                 'status' => 'success',
-                'products' => Product::all(),
+                'products' => $products,
             ],
             200
         );
