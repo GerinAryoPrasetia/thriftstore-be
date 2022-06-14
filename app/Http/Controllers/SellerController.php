@@ -153,6 +153,30 @@ class SellerController extends Controller
     }
 
     /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Seller  $seller
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+        // $products = $seller->products;
+        // if (count($products) > 0) {
+        //     return response()->json([
+        //         'message' => 'Success',
+        //         'data' => $products,
+        //     ], 200);
+        // } else {
+        //     return response()->json([
+        //         'message' => 'Data Not Found',
+        //         'data' => null,
+        //     ], 200);
+        // }
+        return Seller::find($id);
+    }
+
+    /**
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\Seller  $seller

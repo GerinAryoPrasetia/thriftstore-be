@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class BuyerController extends Controller
@@ -14,6 +15,7 @@ class BuyerController extends Controller
     public function index()
     {
         //
+        return User::all();
     }
 
     /**
@@ -36,6 +38,13 @@ class BuyerController extends Controller
     public function show($id)
     {
         //
+        return response()->json(
+            [
+                'status' => 'success',
+                'data' => User::find($id),
+            ],
+            200
+        );
     }
 
     /**

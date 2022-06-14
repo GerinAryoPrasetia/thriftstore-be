@@ -16,7 +16,7 @@ class Product extends Model
         'sold_number',
         'rating',
         'image',
-        'description'
+        'description',
     ];
 
     public function seller()
